@@ -26,5 +26,5 @@ steps:
     configuration: $(buildConfiguration)
   displayName: 'msbuild $(buildConfiguration)'
 
-- script: dotnet test --no-build "NETCore Examples/BowlingKata-SpecFlowJson-xUnit/Bowling.SpecFlowXUnit/Bowling.SpecFlowXUnit.csproj" ---logger trx --configuration $(buildConfiguration)
+- script: dotnet test --no-build "NETCore Examples/BowlingKata-SpecFlowJson-xUnit/Bowling.SpecFlowXUnit/Bowling.SpecFlowXUnit.csproj" --logger trx --configuration $(buildConfiguration)
   displayName: dotnet test $(buildConfiguration) 
