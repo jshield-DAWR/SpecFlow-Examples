@@ -28,3 +28,9 @@ steps:
 
 - script: dotnet test --no-build "NETCore Examples/BowlingKata-SpecFlowJson-xUnit/Bowling.SpecFlowXUnit/Bowling.SpecFlowXUnit.csproj" --logger trx --configuration $(buildConfiguration)
   displayName: dotnet test $(buildConfiguration) 
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '**/*.trx'
+    mergeTestResults: true
