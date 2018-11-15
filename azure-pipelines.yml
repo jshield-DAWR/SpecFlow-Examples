@@ -31,5 +31,5 @@ steps:
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: *.trx
+    testResultsFiles: '*.trx'
     mergeTestResults: true
