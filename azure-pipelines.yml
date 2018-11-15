@@ -8,9 +8,13 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  solution: "NETCore Examples/BowlingKata-SpecFlowJson-xUnit/Bowling.sln" 
 
 steps:
-- script: msbuild /p:Configuration=$(buildConfiguration) "NETCore Examples/BowlingKata-SpecFlowJson-xUnit/Bowling.sln"
+- task: MSBuild@1
+    input:
+      solution: $(solution)
+      configuration: $(buildConfiguration)
   displayName: 'msbuild $(buildConfiguration)'
 
 - script: dotnet test --no-build "NETCore Examples/BowlingKata-SpecFlowJson-xUnit/Bowling.SpecFlowXUnit/Bowling.SpecFlowXUnit.csproj" ---logger trx --configuration $(buildConfiguration)
