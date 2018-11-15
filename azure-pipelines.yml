@@ -12,9 +12,9 @@ variables:
 
 steps:
 - task: MSBuild@1
-    input:
-      solution: $(solution)
-      configuration: $(buildConfiguration)
+  input:
+    solution: $(solution)
+    configuration: $(buildConfiguration)
   displayName: 'msbuild $(buildConfiguration)'
 
 - script: dotnet test --no-build "NETCore Examples/BowlingKata-SpecFlowJson-xUnit/Bowling.SpecFlowXUnit/Bowling.SpecFlowXUnit.csproj" ---logger trx --configuration $(buildConfiguration)
