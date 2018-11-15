@@ -11,6 +11,11 @@ variables:
   solution: "NETCore Examples/BowlingKata-SpecFlowJson-xUnit/Bowling.sln" 
 
 steps:
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: $(solution)
+    
 - task: MSBuild@1
   inputs:
     solution: $(solution)
