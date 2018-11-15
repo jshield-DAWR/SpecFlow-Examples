@@ -12,7 +12,7 @@ variables:
 
 steps:
 
-- task: NugetTool@0
+- task: NuGetToolInstaller@0
   inputs:
     versionSpec: 4.x
 
